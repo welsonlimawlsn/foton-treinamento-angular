@@ -1,0 +1,36 @@
+<table>
+  <thead>
+  <tr>
+    <th>Agencia</th>
+    <th>Estado</th>
+    <th>Numero</th>
+    <th>Saldo</th>
+    <th>Tipo</th>
+    <th>Titular</th>
+    <th>Dia de Aniversario</th>
+    <th>Limite Cheque Especial</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let conta of contas" (click)="selecionaConta(conta)">
+    <td>{{conta.agencia}}</td>
+    <td>{{conta.estado | estado}}</td>
+    <td>{{conta.numero}}</td>
+    <td>
+      <span *ngIf="conta.estado === 'ATIVA'">{{conta.saldo | currency : 'BRL' : 'symbol'}}</span>
+      <span *ngIf="conta.estado === 'ENCERRADA'">Não possui</span>
+    </td>
+    <td>{{conta.tipo | tipo}}</td>
+    <td>{{conta.titular.nome}}</td>
+    <td>
+      <span *ngIf="conta.diaAniversario">{{conta.diaAniversario}}</span>
+      <span *ngIf="!conta.diaAniversario">Não possui</span>
+    </td>
+    <td>
+      <span *ngIf="conta.limiteChequeEspecial">{{conta.limiteChequeEspecial | currency : 'BRL' : 'symbol'}}</span>
+      <span *ngIf="!conta.limiteChequeEspecial">Não possui</span>
+    </td>
+  </tr>
+
+  </tbody>
+</table>

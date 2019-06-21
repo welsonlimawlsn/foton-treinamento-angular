@@ -1,0 +1,17 @@
+table, th, td {
+  border: 1px solid #919191;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #e8e8e8;
+}
+
+table {
+  margin: 0 auto;
+  font-family: "Trebuchet MS", sans-serif;
+}

@@ -4,6 +4,7 @@ import {ListagemContaComponent} from './listagem-conta/listagem-conta.component'
 import {EstadoPipe} from './pipes/estado.pipe';
 import {TipoPipe} from './pipes/tipo.pipe';
 import {FormularioContaComponent} from './formulario-conta/formulario-conta.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +14,12 @@ import {FormularioContaComponent} from './formulario-conta/formulario-conta.comp
     FormularioContaComponent
   ],
   exports: [
-    ListagemContaComponent
+    ListagemContaComponent,
+    FormularioContaComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class ContaModule {

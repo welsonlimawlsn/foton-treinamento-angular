@@ -1,3 +1,6 @@
 <app-listagem-conta [contas]="contas" (seleciona)="setContaSelecionada($event)"></app-listagem-conta>
 
 <app-dados-cliente *ngIf="contaSelecionada" [cliente]="contaSelecionada.titular"></app-dados-cliente>
+
+
+<app-formulario-conta [conta]="novaConta"></app-formulario-conta>

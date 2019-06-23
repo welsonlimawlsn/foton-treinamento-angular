@@ -11,6 +11,20 @@ export class AppComponent implements OnInit {
   title = 'aula1';
   contas: Conta[];
   contaSelecionada: Conta;
+  novaConta: Conta = {
+    agencia: 0,
+    estado: '',
+    tipo: '',
+    limiteChequeEspecial: 0,
+    diaAniversario: 0,
+    titular: {
+      cpf: '',
+      nome: '',
+      status: ''
+    },
+    saldo: '',
+    numero: 0
+  };
 
   constructor(private contaService: ContaService) {
   }

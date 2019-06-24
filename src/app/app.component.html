@@ -3,4 +3,4 @@
 <app-dados-cliente *ngIf="contaSelecionada" [cliente]="contaSelecionada.titular"></app-dados-cliente>
 
 
-<app-formulario-conta [conta]="novaConta"></app-formulario-conta>
+<app-formulario-conta [conta]="novaConta" (formSubmetido)="addConta($event)"></app-formulario-conta>

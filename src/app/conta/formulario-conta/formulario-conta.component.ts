@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Conta} from '../../negocio/dominio/conta';
 import {NgForm} from '@angular/forms';
 
@@ -12,6 +12,9 @@ export class FormularioContaComponent implements OnInit {
   // tslint:disable-next-line:variable-name
   _conta: Conta;
 
+  @Output()
+  formSubmetido = new EventEmitter<Conta>();
+
   constructor() {
   }
 
@@ -22,7 +25,20 @@ export class FormularioContaComponent implements OnInit {
     if (form.invalid) {
       alert('Existem campos invalidos');
     } else {
-      console.log(this._conta);
+      this.formSubmetido.emit({
+        agencia: this._conta.agencia,
+        estado: this._conta.estado,
+        tipo: this._conta.tipo,
+        limiteChequeEspecial: this._conta.limiteChequeEspecial,
+        diaAniversario: this._conta.diaAniversario,
+        saldo: this._conta.saldo,
+        titular: {
+          cpf: this._conta.titular.cpf,
+          nome: this._conta.titular.nome,
+          status: this._conta.titular.status
+        },
+        numero: this._conta.numero
+      });
     }
   }
 

@@ -36,4 +36,8 @@ export class AppComponent implements OnInit {
   setContaSelecionada(conta: Conta) {
     this.contaSelecionada = conta;
   }
+
+  addConta(conta: Conta) {
+    this.contas.push(conta);
+  }
 }

@@ -2,18 +2,26 @@
   <label>Agencia</label>
   <input name="agencia" [(ngModel)]="_conta.agencia" required>
   <label>Estado</label>
-  <input name="estado" [(ngModel)]="_conta.estado" required>
+  <select name="estado" [(ngModel)]="_conta.estado" required>
+    <option value="">Selecione</option>
+    <option value="ATIVA">Ativa</option>
+    <option value="ENCERRADA">Encerrada</option>
+  </select>
   <label>Numero</label>
   <input name="numero" [(ngModel)]="_conta.numero" required>
   <label>Saldo</label>
   <input name="saldo" [(ngModel)]="_conta.saldo" required>
   <label>Tipo</label>
-  <input name="tipo" [(ngModel)]="_conta.tipo" required>
+  <select name="tipo" [(ngModel)]="_conta.tipo" required>
+    <option value="">Selecione</option>
+    <option value="CORRENTE">Conta Corrente</option>
+    <option value="POUPANCA">Poupanca</option>
+  </select>
   <label>Titular</label>
   <input name="titular" [(ngModel)]="_conta.titular.nome" required>
   <label>Dia de Aniversario</label>
   <input name="diaAniversario" [(ngModel)]="_conta.diaAniversario">
   <label>Limite Cheque Especial</label>
   <input name="limiteChequeEspecial" [(ngModel)]="_conta.limiteChequeEspecial">
-  <button (click)="submete(form)">Adicionar</button>
+  <button>Adicionar</button>
 </form>
